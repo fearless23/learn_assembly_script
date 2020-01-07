@@ -1,0 +1,24 @@
+{
+  "name": "learn_assembly_script",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "asbuild:untouched": "asc assembly/index.ts -b build/untouched.wasm -t build/untouched.wat --sourceMap --validate --debug",
+    "asbuild:optimized": "asc assembly/index.ts -b build/optimized.wasm -t build/optimized.wat --sourceMap --validate --optimize",
+    "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fearless23/learn_assembly_script.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fearless23/learn_assembly_script/issues"
+  },
+  "homepage": "https://github.com/fearless23/learn_assembly_script#readme",
+  "devDependencies": {
+    "assemblyscript": "^0.8.1"
+  }
+}

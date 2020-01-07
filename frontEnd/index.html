@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Web Assembly with Assembly Scripy</title>
+  </head>
+  <body>
+    <script>
+      WebAssembly.instantiateStreaming(fetch("/build/optimized.wasm"), {}).then(
+        wasmModule => {
+          const exports = wasmModule.instance.exports;
+          const mem = new Uint32Array(exports.memory.buffer);
+        }
+      );
+    </script>
+  </body>
+</html>
